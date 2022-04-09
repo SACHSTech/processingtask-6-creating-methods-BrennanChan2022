@@ -33,10 +33,10 @@ public class Sketch extends PApplet {
     drawGround(0, 50);
 
     // Draw House 
-    drawHouse(130, 160, 240);
+    drawHouse(130, 160, 240, 148, 61, 61, 130, 127, 127, 203, 212, 211);
 
     // Draw Door 
-    drawDoor(220,310,60,90);
+    drawDoor(220, 310, 60, 90, 79, 5, 5, 110, 0, 0);
 
     //Draw Sun
     drawSun(40, 40, 60);
@@ -70,23 +70,32 @@ public class Sketch extends PApplet {
    * @param HouseX: Starting x coordinate of the House 
    * @param HouseY: Starting y coordinate of the House 
    * @param HouseSize: Size of the inital square base of the house
+   * @param HouseR: "Red" colour value for the RGB colour of the house
+   * @param HouseG: "Green" colour value for the RGB colour of the house
+   * @param HouseB: "Blue" colour value for the RGB colour of the house
+   * @param RoofR: "Red" colour value for the RGB colour of the roof
+   * @param RoofG: "Green" colour value for the RGB colour of the roof
+   * @param RoofB: "Blue" colour value for the RGB colour of the roof
+   * @param WindowR: "Red" colour value for the RGB colour of the window
+   * @param WindowG: "Green" colour value for the RGB colour of the window
+   * @param WindowB: "Blue" colour value for the RGB colour of the window
    * 
    */
-  public void drawHouse(float HouseX, float HouseY, float HouseSize) {
+  public void drawHouse(float HouseX, float HouseY, float HouseSize, float HouseR, float HouseG, float HouseB, float RoofR, float RoofB, float RoofG, float WindowR, float WindowG, float WindowB) {
     
     stroke(0,0,0);
     strokeWeight(1);
 
     // Draw House + Roof
-    fill(148, 61, 61);
+    fill(HouseR, HouseG, HouseB);
     rect(HouseX,HouseY,HouseSize,HouseSize);
     
-    fill(130, 127, 127);
+    fill(RoofR, RoofG, RoofB);
     rect(HouseX + 180, HouseY - 80, HouseSize * 0.17f, HouseSize * 0.25f);
     triangle(HouseX - 30, HouseY, HouseX + 120, HouseY - 80, HouseX + 270, HouseY);
 
     // Draw Windows  
-    fill(203, 212, 211);
+    fill(WindowR, WindowG, WindowG);
     ellipse(HouseX + 50, HouseY + 110, HouseSize * 0.21f, HouseSize * 0.25f);
     ellipse(HouseX + 190, HouseY + 110, HouseSize * 0.21f, HouseSize * 0.25f);
     rect(HouseX + 90, HouseY + 20, HouseSize * 0.25f, HouseSize * 0.21f);
@@ -104,16 +113,22 @@ public class Sketch extends PApplet {
    * @param doorY: y coordinate of the door 
    * @param doorWidth: Size of width of the door
    * @param doorHeight: Size of height of the door
+   * @param doorR: "Red" colour value for the RGB colour of the door
+   * @param doorG: "Green" colour value for the RGB colour of the door
+   * @param doorB: "Blue" colour value for the RGB colour of the door
+   * @param knobR: "Red" colour value for the RGB colour of the doorknob
+   * @param knobG: "Green" colour value for the RGB colour of the doorknob
+   * @param knobB: "Blue" colour value for the RGB colour of the doorknob
    * 
    */
-  public void drawDoor(float doorX, float doorY, float doorWidth, float doorHeight){
+  public void drawDoor(float doorX, float doorY, float doorWidth, float doorHeight, float doorR, float doorG, float doorB, float knobR, float knobG, float knobB){
     
     // Draw Door
-    fill(79, 5, 5);
+    fill(doorR, doorG, doorB);
     rect(doorX, doorY, doorWidth, doorHeight);
 
     // Draw Doorknob
-    fill(110, 0, 0);
+    fill(knobR, knobG, knobB);
     ellipse(doorX + 50, doorY + 50, doorWidth * 0.17f, doorHeight * 0.1f);
   }
 
