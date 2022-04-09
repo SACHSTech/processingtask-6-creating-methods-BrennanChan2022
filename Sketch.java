@@ -35,10 +35,15 @@ public class Sketch extends PApplet {
     // Draw House 
     drawHouse(130, 160, 240);
 
+    // Draw Door 
+    drawDoor(220,310,60,90);
+
     //Draw Sun
     drawSun(40, 40, 60);
+    
   }
   
+
   /**
    * Draws the grass and dirt
    * 
@@ -57,6 +62,7 @@ public class Sketch extends PApplet {
     fill(107, 68, 27);
     rect(GrassX, height - GrassHeight, width, GrassHeight);
   }
+
 
   /**
    * Draws House including the windows and roof
@@ -90,6 +96,28 @@ public class Sketch extends PApplet {
     line(HouseX + 90, HouseY + 45, HouseX + 150, HouseY + 45); 
   }
 
+
+  /**
+   * Draws the door and the doorknob for the house
+   * 
+   * @param doorX: x coordinate of the door 
+   * @param doorY: y coordinate of the door 
+   * @param doorWidth: Size of width of the door
+   * @param doorHeight: Size of height of the door
+   * 
+   */
+  public void drawDoor(float doorX, float doorY, float doorWidth, float doorHeight){
+    
+    // Draw Door
+    fill(79, 5, 5);
+    rect(doorX, doorY, doorWidth, doorHeight);
+
+    // Draw Doorknob
+    fill(110, 0, 0);
+    ellipse(doorX + 50, doorY + 50, doorWidth * 0.17f, doorHeight * 0.1f);
+  }
+
+
   /**
    * Draws a Sun in the corner of the image
    * 
@@ -106,5 +134,6 @@ public class Sketch extends PApplet {
     ellipse(SunX, SunY, SunSize, SunSize);
 
   }
+
   // define other methods down here.
 }
